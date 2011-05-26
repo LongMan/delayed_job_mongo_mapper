@@ -37,7 +37,7 @@ module Delayed
 
           conditions = {
             :run_at => {"$lte" => right_now},
-            :limit => -limit, # In mongo, positive limits are 'soft' and negative are 'hard'
+            :limit => limit,
             :failed_at => nil,
             :sort => [[:priority, 1], [:run_at, 1]]
           }
